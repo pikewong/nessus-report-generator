@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReportGenerator.FormMain" Collapsed="true">
+    <Position X="3.5" Y="9.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DHmM0GnAhqC8WEWYOlzob1wClJ+BLWDN3xF5Y8mtj/g=</HashCode>
+      <FileName>FormMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormCaseCreateAndOpen" Collapsed="true">
+    <Position X="2" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAVAAIACAIAEAAAADATAACEAAAIAAAAABBAAAAABA=</HashCode>
+      <FileName>FormCaseCreateAndOpen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormStart" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGAAAAAAACAAAAAAIACAAIACAAAAAEAAAAACBAAAAAA=</HashCode>
+      <FileName>FormStart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.DocxAsTemplate" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAIkAAAAAABAQAAAAAAAACIAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\DocxAsTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.DocxFromDocxTemplateOutputer" Collapsed="true">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggEAImEAAAAABAQAQAABAgCCIACIAAIAABhAQAAAEA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\DocxFromDocxTemplateOutputer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.DocxFromDotxTemplateOutputer" Collapsed="true">
+    <Position X="14.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\DocxFromDotxTemplateOutputer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.DocxOutputFormater" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIgAAAAAAAAAAAAAAAAACAAAAAAIAAAgAAAAAEA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\DocxOutputFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.DocxTemplateBuilder" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIIAAAEAAAQMACADWAAAkEACACAGABICABACAGwk=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\DocxTemplateBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.HTMLOutputFormater" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAIAACAAAAAAAAAAAAAACCAAAAAAAAAAgACAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\HTMLOutputFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.OutputDefault" Collapsed="true">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\OutputDefault.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.OutputFormater" Collapsed="true">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\OutputFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.OutputFromTemplateFormater" Collapsed="true">
+    <Position X="16" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\OutputFromTemplateFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.XlsxFromTemplateFormater" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\XlsxFromTemplateFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.OutputFormatter.XlsxOutputFormater" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEAAEAAAAAIBAQAAAAAAAACIAAAAAAAAAAAQAAAAI=</HashCode>
+      <FileName>ReportOutput\OutputFormatter\XlsxOutputFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportOutput.ReportOutputer" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportOutput\ReportOutputer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Program" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.State" Collapsed="true">
+    <Position X="2" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgEwEBAABNACAAIAkAgAOJKIzAAgYAggCEAAACAyA=</HashCode>
+      <FileName>State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.XmlParser" Collapsed="true">
+    <Position X="3.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ReportInput\Parser\XmlParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.NessusParser" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>ReportInput\Parser\NessusParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.ReportInputer" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAUAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportInput\ReportInputer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.NessusDataEntry" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Record\NessusDataEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.Record" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQARAEAIAAAEDAGQAgCAJAIAWACBAQCBAAgAAUAAA=</HashCode>
+      <FileName>Record\Record.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.RiskFactorFunction" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Record\RiskFactor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.RiskStats" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Record\RiskStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Database.Databaser" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAEAAAAAAAIAAAAAIACAABEAAQAYAAAAIAAAAAAIEA=</HashCode>
+      <FileName>Database\Databaser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormEditFinding" Collapsed="true">
+    <Position X="5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>mACCAAAoACAsBACYoACABAgCEAAAASQAAQgBBAAkDBg=</HashCode>
+      <FileName>FormEditFinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormEditFindingString" Collapsed="true">
+    <Position X="6.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAISCAAAEAIAACADAACEEAAAAAAAQAAAAAAgCA=</HashCode>
+      <FileName>FormEditFindingString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Database.CaseDatabaser" Collapsed="true">
+    <Position X="5.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAYAAAAAAACAAIACAAAIAAAAoAAAAAAAEA=</HashCode>
+      <FileName>Database\CaseDatabaser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.MBSAParser" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAgAAAAAQIAAAAQQEAAAAAgAAAAAAAAAAIEEAEAAA=</HashCode>
+      <FileName>ReportInput\Parser\MBSAParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.DataEntry" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBLIQAAAgA0CAJQIAAEAAgQAAAhACoIgAABAQUgUgQ=</HashCode>
+      <FileName>Record\DataEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.MBSADataEntry" Collapsed="true">
+    <Position X="3.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Record\MBSADataEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.NmapDataEntry" Collapsed="true">
+    <Position X="5.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Record\NmapDataEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.NmapParser" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAEAAAAAgQAAAAAAAGBAAAAgIAAQAAAgEAAkAAAAAA=</HashCode>
+      <FileName>ReportInput\Parser\NmapParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.NmapTxtParser" Collapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFAAABACAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportInput\Parser\NmapTxtParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.Parser" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAMQAAAAAACAAQAAAAABkAAgCRAAAAAABABEAAgAQgA=</HashCode>
+      <FileName>ReportInput\Parser\Parser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.ReportInput.InputParser.TextFileParser" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ReportInput\Parser\TextFileParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.Hotfix" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAgAAAgAAABAACAAAACQAABgAAAQAAAAgAIA=</HashCode>
+      <FileName>Record\Hotfix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.Record.GuiDataEntry" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Record\GuiDataEntry.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormEditTemplateString" Collapsed="true">
+    <Position X="8" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAACAAAAAIAACABAACUAAAAAAQASgQAAAAAAA=</HashCode>
+      <FileName>FormEditTemplateString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator.FormMessage" Collapsed="true">
+    <Position X="9.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAACAAAACAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Message.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ReportGenerator.Record.RiskFactor" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAIAAAgAAAAAAQAAAAAAAAAAAIAAAAAAAAAAQAA=</HashCode>
+      <FileName>Record\RiskFactor.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft JhengHei" Size="9" />
+</ClassDiagram>
