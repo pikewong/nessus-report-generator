@@ -17,6 +17,15 @@ namespace ReportGenerator.Database
         private SQLiteConnection sqlite_conn;
         private SQLiteCommand sqlite_cmd;
         private string path = null;
+
+
+        /*
+         * This is the PermanentDatabase Constructor
+         * Input : _path ( Path for the PermanentDatabaser)
+         * 
+         * Purpose: Create a new Amendement Table if not exist         * 
+         * */
+
         public PermanentDatabaser(string _path = null) {
             path = _path;
             if (path== null || path == "")
@@ -159,6 +168,8 @@ namespace ReportGenerator.Database
         /*
          * This is the addSlash method.
          * It is used to add "'" for the string to prevent errors storing to the database.
+         * 
+         *  !!FU!! : addSlash Method need test
          */
         private String addSlash(String s)
         {
@@ -172,7 +183,7 @@ namespace ReportGenerator.Database
 
         public BindingSource getBindingSource(string targetCol = null, string keyword = null)
         {
-            string query = "SELECT* FROM Amendment";
+            string query = "SELECT * FROM Amendment";
             //if (targetCol != null && keyword != null)
             //    query += " WHERE " + targetCol + " LIKE '%" + keyword + "%'";
 

@@ -124,7 +124,7 @@
             this.FormCaseCreateAndOpenBrowseTableLayout.Name = "FormCaseCreateAndOpenBrowseTableLayout";
             this.FormCaseCreateAndOpenBrowseTableLayout.RowCount = 1;
             this.FormCaseCreateAndOpenBrowseTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.FormCaseCreateAndOpenBrowseTableLayout.Size = new System.Drawing.Size(466, 36);
+            this.FormCaseCreateAndOpenBrowseTableLayout.Size = new System.Drawing.Size(466, 35);
             this.FormCaseCreateAndOpenBrowseTableLayout.TabIndex = 9;
             // 
             // FormCaseCreateAndOpenBottomButtonsTableLayout
@@ -137,7 +137,7 @@
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.Controls.Add(this.buttonNext, 1, 0);
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.Controls.Add(this.buttonCancel, 2, 0);
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.Dock = System.Windows.Forms.DockStyle.Right;
-            this.FormCaseCreateAndOpenBottomButtonsTableLayout.Location = new System.Drawing.Point(232, 67);
+            this.FormCaseCreateAndOpenBottomButtonsTableLayout.Location = new System.Drawing.Point(232, 66);
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.Name = "FormCaseCreateAndOpenBottomButtonsTableLayout";
             this.FormCaseCreateAndOpenBottomButtonsTableLayout.RowCount = 1;
@@ -160,7 +160,7 @@
             this.FormCaseCreateAndOpenTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.FormCaseCreateAndOpenTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.FormCaseCreateAndOpenTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55F));
-            this.FormCaseCreateAndOpenTableLayout.Size = new System.Drawing.Size(484, 112);
+            this.FormCaseCreateAndOpenTableLayout.Size = new System.Drawing.Size(484, 111);
             this.FormCaseCreateAndOpenTableLayout.TabIndex = 11;
             this.FormCaseCreateAndOpenTableLayout.Paint += new System.Windows.Forms.PaintEventHandler(this.FormCaseCreateAndOpenTableLayout_Paint);
             // 
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 112);
+            this.ClientSize = new System.Drawing.Size(484, 111);
             this.Controls.Add(this.FormCaseCreateAndOpenTableLayout);
             this.MaximumSize = new System.Drawing.Size(500, 150);
             this.MinimumSize = new System.Drawing.Size(500, 150);

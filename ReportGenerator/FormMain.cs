@@ -19,6 +19,8 @@ using DataGridViewAutoFilter;
 using System.Data.Odbc;
 using System.Data.SQLite;
 
+using System.Text.RegularExpressions;
+
 namespace ReportGenerator {
 
 	/// <summary>
@@ -79,7 +81,8 @@ namespace ReportGenerator {
             
             PLUGINVERSION=17,
             //FINDINGDETAILPOSITION=19
-            PLUGINID=18
+            PLUGINID=18,
+
 		}
         
         //const int FILTERMAXCOL=17;
@@ -1667,8 +1670,8 @@ namespace ReportGenerator {
 			}
 
 			this.Enabled = false;
-            
-			new FormEditFinding(indexArray, dataArray).ShowDialog();
+            if(counter > 0)
+			    new FormEditFinding(indexArray, dataArray).ShowDialog();
 
 			this.Enabled = true;
             this.TopMost = true;
@@ -2373,7 +2376,7 @@ namespace ReportGenerator {
             panelRecordEdit_buttonDown.Enabled = counter == 1 ? true : false;
 			// update other buttons too
 			panelRecordEdit_buttonUpdateRecord.Enabled = counter == 1 ? true : false;
-			panelRecordEdit_buttonMergeRecord.Enabled = counter > 1 ? true : false;
+            panelRecordEdit_buttonMergeRecord.Enabled = counter > 1 ? true : false;
             panelRecordEdit_buttonDeleteRecord.Enabled = counter >= 1 ? true : false;
 			// set text of the label
 			panelRecordEdit_labelNoOfRowSelected.Text = "No of findings selected: " + counter.ToString();
@@ -4573,11 +4576,155 @@ namespace ReportGenerator {
         }
 
 
+        /*
+         * <summary>
+         * This is the panelRecordEdit_buttonExtractMSPatches_Click method.
+         * This is used to handle the click event on button panelRecordEdit_buttonExtractMSPatches.
+         * 
+         * It will
+         * 1. Output all the Missing Patches in Excel Format
+         * 2. Select all the output items in the panel for deletion
+         * </summary>
+         * 
+         * 
+         * <TODO>
+         * Handle the search case when some of the items have been merged
+         * </TODO>
+         * <param name="sender"></param>
+         * <param name="e"></param>
+         * 
+         * */
+        private void panelRecordEdit_buttonExtractMSPatches_Click(object sender, EventArgs e) {
+
+            // For extracting the Patches
+            string bulletin = null;
+            string patches = null;
+            string hostAffected = null;
+            InteropExcel excel = new InteropExcel();
+
+            // Regular expression for missing patches
+            string[] regType = { @"MS\s?\d+\-\d+(\s+)?:?\s+", @"MS\s?KB\d+(\s+)?:?\s+", @"MS\s?\d+(\s+)?:?\s+", @"MS\s+Security\s+Advisory\s+\d+(\s+)?:?\s+" };
+            string[] regBulletin = { @"MS\s?\d+\-\d+", @"MS\s?KB\d+", @"MS\s?\d+", @"MS\s+Security\s+Advisory\s+\d+" };
+            int type = -1;
+
+            MatchCollection bulletinMatch = null;
+
+            foreach (DataGridViewRow row in panelRecordEdit_dataGridView.Rows) {
+                // Reset the selected value
+                row.Cells[(int)CellColumnIndex.SELECTED].Value = false;
+
+                string findingPluginName = (string)row.Cells[(int)CellColumnIndex.PLUGINNAME].Value;
+                if (findingPluginName == null) continue;
+
+                for (int i = 0; i < regType.Length; i++) {
+                    bulletinMatch = Regex.Matches(findingPluginName, regType[i]);
+                    if (bulletinMatch.Count > 0) {
+                        type = i;
+                        MatchCollection workingMatch = Regex.Matches(bulletinMatch[0].Value, regBulletin[type]);
+                        bulletin = workingMatch[0].Value.Trim();
+                        patches = findingPluginName.Substring(bulletinMatch[0].Value.Length, findingPluginName.Length - bulletinMatch[0].Value.Length);
+                        hostAffected = (string)row.Cells[(int)CellColumnIndex.IPLIST].Value;
+                        hostAffected = Regex.Replace(hostAffected, @"\s\(.*?\)", @"");
+                        if(row.Visible == true)
+                            row.Cells[(int)CellColumnIndex.SELECTED].Value = true;
+
+                        excel.addPatchRecord(bulletin, patches, hostAffected);
+                        break;
+                    }
+                }
+            }
+            excel.SaveWorkbook();
+            
+            //Enable delete and merge record buttton
+            panelRecordEdit_buttonDeleteRecord.Enabled = true;
+            panelRecordEdit_buttonMergeRecord.Enabled = true;
+        }
+
+        private void panelRecordEdit_buttonMultiVulnSuggestion_Click(object sender, EventArgs e) {
+            int counter = 0;
+            List<int> indexArray = new List<int>();
+            List<DataEntry> dataArray = new List<DataEntry>();
+
+            Dictionary<int, DataEntry> undoList = new Dictionary<int, DataEntry>();
+            Dictionary<int, bool> undoEdited = new Dictionary<int, bool>();
+            Dictionary<int, bool> undoMegered = new Dictionary<int, bool>();
+
+            string MultiVulnListpath = Directory.GetCurrentDirectory() + "\\MultiVulList.txt";
+
+            string[] applicationList = System.IO.File.ReadAllLines(MultiVulnListpath);
+            for (int i = 0; i < applicationList.Length; i++) {
+                applicationList[i] = "^" + applicationList[i];
+            }
+
+            MatchCollection applicationMatch = null;
+
+            for (int i = 0; i < applicationList.Length; i++) {
+                indexArray.Clear();
+                dataArray.Clear();
+                counter = 0;
+                foreach (DataGridViewRow row in panelRecordEdit_dataGridView.Rows) {
+                    row.Cells[(int)CellColumnIndex.SELECTED].Value = false;
+
+                    string findingPluginName = (string)row.Cells[(int)CellColumnIndex.PLUGINNAME].Value;
+                    if (findingPluginName == null) continue;
+                    applicationMatch = Regex.Matches(findingPluginName, applicationList[i]);
+                        if (applicationMatch.Count > 0) {
+                            if (row.Visible == true) {
+                                row.Cells[(int)CellColumnIndex.SELECTED].Value = true;
+                                
+                                counter++;
+                                indexArray.Add(row.Index);
+                                dataArray.Add(panelRecordEdit_rowToDataEntry(row));
+    
+                                int dbid = int.Parse(row.Cells[(int)CellColumnIndex.DBID].Value.ToString());
+                                undoEdited[dbid] = (bool)row.Cells[(int)CellColumnIndex.EDITED].Value;
+                                undoMegered[dbid] = (bool)row.Cells[(int)CellColumnIndex.MERGED].Value;
+                                undoList[dbid] = panelRecordEdit_rowToDataEntry(row);
+                            }
+                        }
+                }
+                this.Enabled = false;
+                if (counter > 0)
+                    new FormEditFinding(indexArray, dataArray).ShowDialog();
+
+                this.Enabled = true;
+                this.TopMost = true;
+                this.TopMost = false;
+
+                // if button "OK" is clicked, a finding should be append to the
+                // dataGridView
+
+
+                if (Program.state.formEditFindingState == State.FormEditFindingState.OK) {
+                    //panelRecordEdit_addRowForMerge(Program.state.formEditFindingEntry);
+                    panelRecordEdit_deleteRowForMerge(Program.state.formEditFindingEntry, indexArray);
+                    //foreach (int index in indexArray) {
+                    //    panelRecordEdit_dataGridView.Rows[index].Cells[(int)CellColumnIndex.SELECTED].Value = false;
+                    //}
+                    panelRecordEdit_checkboxCheckedChangedAction();
+                    panelRecordEdit_checkboxTypeCheckedChangedAction();
+                    panelRecordEdit_enableNextButton();
 
 
 
+                    Program.state.panelRecordEdit_undoEdited = undoEdited;
+                    Program.state.panelRecordEdit_undoMegered = undoMegered;
+                    Program.state.panelRecordEdit_undoDataEntryList = undoList;
+                    panelRecordEdit_buttonUndo.Enabled = true;
+                    panelRecordEdit_dataGridView_reloadBackgroundColor();
+                }
 
+                Program.state.formEditFindingState = State.FormEditFindingState.NULL;
 
+            }
+        }
+
+        private void panelOutputSelect_buttonXlsxNessus_Click(object sender, EventArgs e) {
+            Program.state.panelOutputSelect_State = State.PanelOutputSelectState.XLSX;
+            panelOutputSelect_initialize();
+            panelOutputSelect_groupBoxOutputFilePath.Show();
+            panelOutputSelect_groupBoxTemplatePath.Hide();
+        }
 
     }
 

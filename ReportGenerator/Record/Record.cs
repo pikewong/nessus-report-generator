@@ -39,6 +39,12 @@ namespace ReportGenerator.Record {
             {
                 return resultOpenPortDic;
             }
+
+            /*
+             * Constructor
+             * Initialize variables
+             * 
+             * */
             public OpenPortTableItemData()
             {
                 for (int i = 0; i < 3; i++)
