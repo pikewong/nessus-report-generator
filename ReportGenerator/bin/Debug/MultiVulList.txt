@@ -1,0 +1,8 @@
+PHP
+Apache
+Firefox
+OpenSSL
+MySQL
+HP System Management Homepage
+Flash Player
+Google Chrome
